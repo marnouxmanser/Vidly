@@ -1,5 +1,14 @@
-﻿body {
-    padding-top: 50px;
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
     padding-bottom: 20px;
 }
 
