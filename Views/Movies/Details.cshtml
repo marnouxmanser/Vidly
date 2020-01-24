@@ -11,3 +11,5 @@
     <li>@Html.DisplayNameFor(m => m.DateAdded): @Model.DateAdded</li>
     <li>@Html.DisplayNameFor(m => m.NumberInStock): @Model.NumberInStock</li>
 </ul>
+<br />
+@Html.ActionLink("Back", "Index", new { controller = "Movies" }, new { @class = "btn btn-success"  })

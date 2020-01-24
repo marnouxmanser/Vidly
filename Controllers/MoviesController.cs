@@ -61,7 +61,7 @@ namespace Vidly.Controllers
                 var movieInDB = _context.Movies.Single(c => c.Id == movie.Id);
 
                 movieInDB.Name = movie.Name;
-                movieInDB.Genre.Id = movie.Genre.Id;
+                movieInDB.GenreId = movie.GenreId;
                 movieInDB.ReleaseDate = movie.ReleaseDate;
                 movieInDB.NumberInStock = movie.NumberInStock;
             }
@@ -69,6 +69,24 @@ namespace Vidly.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Movies");
+        }
+
+        public ActionResult Edit(int Id)
+        {
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == Id);
+
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+
+            var MovieFormViewModel = new MovieFormViewModel()
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+
+            return View("New", MovieFormViewModel);
         }
     }
 }
