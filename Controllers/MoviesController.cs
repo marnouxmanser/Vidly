@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Web.Mvc;
 using Vidly.Models;
 using System.Linq;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -37,5 +38,37 @@ namespace Vidly.Controllers
 
         }
 
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+            var viewModel = new MovieFormViewModel
+            {
+                Genres = genres
+            };
+
+            return View(viewModel);
+        }
+        
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDB = _context.Movies.Single(c => c.Id == movie.Id);
+
+                movieInDB.Name = movie.Name;
+                movieInDB.Genre.Id = movie.Genre.Id;
+                movieInDB.ReleaseDate = movie.ReleaseDate;
+                movieInDB.NumberInStock = movie.NumberInStock;
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Movies");
+        }
     }
 }
