@@ -6,20 +6,23 @@
     <title>@ViewBag.Title - Vidly</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </head>
 <body>
     @Html.Partial("_NavBar")
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Vidly</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @RenderBody()
+
+        <footer class="fixed-bottom">
+            <hr />
+            <div class="container">
+                <p>&copy; @DateTime.Now.Year - Vidly</p>
+            </div>
+        </footer>
+
+    </div>
 </body>
 </html>

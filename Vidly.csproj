@@ -249,6 +249,14 @@
     <Compile Include="Migrations\202001230813282_SeedGenreNew.designer.cs">
       <DependentUpon>202001230813282_SeedGenreNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001240918239_movieDateAddedDefault.cs" />
+    <Compile Include="Migrations\202001240918239_movieDateAddedDefault.designer.cs">
+      <DependentUpon>202001240918239_movieDateAddedDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001241015366_newConstraintOnMovie.cs" />
+    <Compile Include="Migrations\202001241015366_newConstraintOnMovie.designer.cs">
+      <DependentUpon>202001241015366_newConstraintOnMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -491,6 +499,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001230813282_SeedGenreNew.resx">
       <DependentUpon>202001230813282_SeedGenreNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001240918239_movieDateAddedDefault.resx">
+      <DependentUpon>202001240918239_movieDateAddedDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001241015366_newConstraintOnMovie.resx">
+      <DependentUpon>202001241015366_newConstraintOnMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
