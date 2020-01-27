@@ -285,6 +285,10 @@
     <Compile Include="Migrations\202001270937138_addMovieImgUrl.designer.cs">
       <DependentUpon>202001270937138_addMovieImgUrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001271152361_addFileForMovie.cs" />
+    <Compile Include="Migrations\202001271152361_addFileForMovie.designer.cs">
+      <DependentUpon>202001271152361_addFileForMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -319,6 +323,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\bg-masthead.jpg" />
+    <Content Include="Content\img\movies\blank.png" />
     <Content Include="Content\img\movies\Glass.png" />
     <Content Include="Content\img\movies\Star Wars Episode III - Revenge of the Sith.jpg" />
     <Content Include="Content\img\movies\The Boondock Saints.jpeg" />
@@ -662,6 +667,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001270937138_addMovieImgUrl.resx">
       <DependentUpon>202001270937138_addMovieImgUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271152361_addFileForMovie.resx">
+      <DependentUpon>202001271152361_addFileForMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

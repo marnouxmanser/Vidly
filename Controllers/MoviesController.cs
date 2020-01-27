@@ -5,6 +5,7 @@ using Vidly.Models;
 using System.Linq;
 using Vidly.ViewModels;
 using System;
+using System.IO;
 
 namespace Vidly.Controllers
 {
@@ -68,11 +69,26 @@ namespace Vidly.Controllers
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
+
+                if (movie.File != null && movie.File.ContentLength > 0)
+                {
+                    string path = Path.Combine(Server.MapPath("/Content/img/movies"),
+                                               Path.GetFileName(movie.File.FileName));
+                    movie.File.SaveAs(path);
+                    
+                    string pathFormatted =  path.Replace(@"\", "/");
+
+                    pathFormatted = pathFormatted.Substring(pathFormatted.IndexOf("/Content")).Trim();
+
+                    movie.ImageURL = pathFormatted;
+                }
+
                 _context.Movies.Add(movie);
             }
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+
                 movieInDb.Name = movie.Name;
                 movieInDb.GenreId = movie.GenreId;
                 movieInDb.NumberInStock = movie.NumberInStock;

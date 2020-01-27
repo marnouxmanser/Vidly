@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Vidly.Models
 {
@@ -28,6 +30,9 @@ namespace Vidly.Models
 
         public byte NumberAvailable { get; set; }
 
-        public string imageURL { get; set; }
+        public string ImageURL { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase File { get; set; }
     }
 }
