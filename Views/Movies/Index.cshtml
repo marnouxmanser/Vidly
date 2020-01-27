@@ -8,7 +8,7 @@
 <h2>Movies</h2>
 
 <div style="margin-top: 12px; margin-bottom:20px;">
-    @Html.ActionLink("New Movie", "New", new { controller = "Movies" }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("New Movie", "New", new { controller = "Movies" }, new { @class = "btn btn-success" })
 </div>
 
 <table class="table table-bordered table-hover">
@@ -24,7 +24,7 @@
         {
             <tr>
                 <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { id = movie.Id }, null)</td>
-                <td>@movie.Genre.Description</td>
+                <td>@movie.Genre.Name</td>
                 <td>
                     <div style="text-align:center;">
                         @Html.ActionLink("Details", "Details", "Movies", new { id = movie.Id }, new { @class = "btn btn-sm btn-success" })

@@ -34,3 +34,9 @@
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 }
+
+<script>
+    $(document).ready(function () {
+        $('#Customer_BirthDate').datepicker({ endDate: new Date(new Date().setDate(new Date().getDate() + 0)) });
+    });
+</script>
