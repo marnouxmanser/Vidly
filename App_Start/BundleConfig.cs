@@ -20,10 +20,12 @@ namespace Vidly
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                "~/Scripts/bootstrap-datepicker.min.js",
+                "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-darkly.css",
+                      "~/Content/bootstrap-datepicker.min.css",
                       "~/Content/site.css"));
         }
     }
