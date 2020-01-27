@@ -105,5 +105,12 @@ namespace Vidly.Controllers
 
             return View("New", MovieFormViewModel);
         }
+
+        public ViewResult CardView()
+        {
+            var movies = _context.Movies.Include(m => m.Genre).OrderBy(m => m.Name).ToList();
+
+            return View(movies);
+        }
     }
 }

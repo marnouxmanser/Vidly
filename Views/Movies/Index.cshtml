@@ -8,7 +8,7 @@
 <h2>Movies</h2>
 
 <div style="margin-top: 12px; margin-bottom:20px;">
-    @Html.ActionLink("New Movie", "New", new { controller = "Movies" }, new { @class = "btn btn-success" })
+    @Html.ActionLink("New Movie", "New", new { controller = "Movies" }, new { @class = "btn btn-outline-success" })
 </div>
 
 <table class="table table-bordered table-hover">
@@ -35,3 +35,5 @@
         }
     </tbody>
 </table>
+<br />
+@Html.ActionLink("Card View", "CardView", new { controller = "Movies" }, new { @class = "btn btn-outline-success" })

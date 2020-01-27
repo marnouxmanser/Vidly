@@ -27,5 +27,7 @@ namespace Vidly.Models
         public byte NumberInStock { get; set; }
 
         public byte NumberAvailable { get; set; }
+
+        public string imageURL { get; set; }
     }
 }
