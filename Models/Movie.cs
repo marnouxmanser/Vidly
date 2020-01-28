@@ -32,6 +32,7 @@ namespace Vidly.Models
 
         public string ImageURL { get; set; }
 
+        //Commit before format
         [NotMapped]
         public HttpPostedFileBase File { get; set; }
     }
