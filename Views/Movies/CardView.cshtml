@@ -28,7 +28,7 @@
                             @{
                                 string imgSrc = @"/Content/img/movies/blank.png";
 
-                                if (movie.ImageURL.Length == 0)
+                                if (movie.ImageURL.Length > 0)
                                 {
                                     imgSrc = movie.ImageURL;
                                 }
