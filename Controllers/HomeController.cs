@@ -27,5 +27,10 @@ namespace Vidly.Controllers
 
             return View();
         }
+        
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
     }
 }

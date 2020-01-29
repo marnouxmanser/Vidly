@@ -27,7 +27,7 @@ namespace Vidly
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-darkly.css",
-                      "~/Content/datatables/css/datatables.bootstrap.css",
+                      "~/Content/datatables/css/dataTables.bootstrap4.css",
                       "~/Content/bootstrap-datepicker.min.css",
                       "~/Content/site.css"
                       ));
