@@ -14,6 +14,7 @@ namespace Vidly
                         "~/Scripts/bootstrap-datepicker.js",
                         "~/Scripts/bootbox.js",
                         "~/Scripts/datatables/jquery.datatables.js",
+                        "~/Scripts/typeahead.bundle.js",
                         "~/Scripts/datatables/datatables.bootstrap4.js"
                         ));
 
@@ -29,6 +30,7 @@ namespace Vidly
                       "~/Content/bootstrap-darkly.css",
                       "~/Content/datatables/css/dataTables.bootstrap4.css",
                       "~/Content/bootstrap-datepicker.min.css",
+                      "~/Content/typeahead.css",
                       "~/Content/site.css"
                       ));
         }

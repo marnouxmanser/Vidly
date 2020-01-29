@@ -217,6 +217,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
@@ -325,6 +326,14 @@
     <Compile Include="Migrations\202001291605477_AddDrivingLicenseToApplicationUser.designer.cs">
       <DependentUpon>202001291605477_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001291940064_AddedRentalDomainModel.cs" />
+    <Compile Include="Migrations\202001291940064_AddedRentalDomainModel.designer.cs">
+      <DependentUpon>202001291940064_AddedRentalDomainModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001291956365_UpdateNumberMoviesAvailable.cs" />
+    <Compile Include="Migrations\202001291956365_UpdateNumberMoviesAvailable.designer.cs">
+      <DependentUpon>202001291956365_UpdateNumberMoviesAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -334,6 +343,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -518,10 +528,13 @@
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\img\bg-masthead.jpg" />
     <Content Include="Content\img\movies\blank.png" />
+    <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootbox.js" />
     <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
@@ -790,6 +803,10 @@
     <Content Include="Scripts\src\utils\setAttributes.js" />
     <Content Include="Scripts\src\utils\setStyles.js" />
     <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -849,6 +866,7 @@
     <Content Include="Views\Movies\CardView.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -944,6 +962,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001291605477_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>202001291605477_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001291940064_AddedRentalDomainModel.resx">
+      <DependentUpon>202001291940064_AddedRentalDomainModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001291956365_UpdateNumberMoviesAvailable.resx">
+      <DependentUpon>202001291956365_UpdateNumberMoviesAvailable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
