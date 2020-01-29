@@ -15,39 +15,36 @@
 
 <h2>Movies Card View</h2>
 
-<div class="justify-content-center">
-    <div class="col-md-12">
-        <div class="row">
-            @foreach (var movie in Model)
-            {
-                <div class="d-flex justify-content-center" style="margin-left: 30px;">
-                    <div class="card" style="width:250px; margin-bottom:30px;">
-                        <div class="card-body">
-                            <div style="text-align:center"><h4 class="card-title">@movie.Name</h4></div>
-                            <hr />
-                            @{
-                                string imgSrc = @"/Content/img/movies/blank.png";
 
-                                if (movie.ImageURL != null && movie.ImageURL.Length > 0)
-                                {
-                                    imgSrc = movie.ImageURL;
-                                }
-                            }
-                            <img class="card-img-top img-fluid img-thumbnail mx-auto d-block" src="@imgSrc" alt="@movie.Name" />
-                            <hr />
-                            <h6 class="card-subtitle mb-2 text-muted">Genre</h6>
-                            <p class="card-text">@movie.Genre.Name</p>
-                            <h6 class="card-subtitle mb-2 text-muted">Release Date</h6>
-                            <p class="card-text">@movie.ReleaseDate.ToString("yyyy/MM/dd")</p>
-                            <h6 class="card-subtitle mb-2 text-muted">Date Added</h6>
-                            <p class="card-text">@movie.DateAdded</p>
-                            <h6 class="card-subtitle mb-2 text-muted">Number in Stock</h6>
-                            <p class="card-text">@movie.NumberInStock</p>
-                            @Html.ActionLink("Edit", "Edit", "Movies", new { id = movie.Id }, new { @class = "btn btn-sm btn-success" })
-                        </div>
-                    </div>
+<div class="row align-items-center align-content-center align-self-center">
+    @foreach (var movie in Model)
+    {
+        <div class="d-flex justify-content-center" style="margin-left: 30px;">
+            <div class="card" style="width:250px; margin-bottom:30px;">
+                <div class="card-body">
+                    <div style="text-align:center"><h4 class="card-title">@movie.Name</h4></div>
+                    <hr />
+                    @{
+                        string imgSrc = @"/Content/img/movies/blank.png";
+
+                        if (movie.ImageURL != null && movie.ImageURL.Length < 0)
+                        {
+                            imgSrc = movie.ImageURL;
+                        }
+                    }
+                    <img class="card-img-top img-fluid img-thumbnail mx-auto d-block" src="@imgSrc" alt="@movie.Name" />
+                    <hr />
+                    <h6 class="card-subtitle mb-2 text-muted">Genre</h6>
+                    <p class="card-text">@movie.Genre.Name</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Release Date</h6>
+                    <p class="card-text">@movie.ReleaseDate.ToString("yyyy/MM/dd")</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Date Added</h6>
+                    <p class="card-text">@movie.DateAdded</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Number in Stock</h6>
+                    <p class="card-text">@movie.NumberInStock</p>
+                    @Html.ActionLink("Edit", "Edit", "Movies", new { id = movie.Id }, new { @class = "btn btn-sm btn-success" })
                 </div>
-            }
+            </div>
         </div>
-    </div>
+    }
 </div>
